@@ -48,7 +48,7 @@ FROM countrylanguage cl
 FULL JOIN  country c 
 ON cl.countrycode = c.code     -- joining two tbale to get the name of the country and region
 WHERE cl.language = 'Italian'
-AND cl.countrycode != 'VAT'   -- getting the country ohter than Vatican
+AND cl.countrycode != 'VAT'   -- getting the country other than Vatican
 AND NOT EXISTS (               -- checking if the countrycode with language=Italian has no other languages
     SELECT 1                   
     FROM countrylanguage cl2
