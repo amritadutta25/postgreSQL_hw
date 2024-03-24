@@ -82,3 +82,20 @@ LIMIT 100;
 SELECT avg(salary)
 FROM players
 WHERE position = 'DE';
+
+
+-- The total salary of all players on the New York Giants
+SELECT sum(salary)
+FROM players as p
+JOIN teams t 
+ON p.team_id = t.id
+WHERE t.name = 'New York Giants';
+
+-- The player with the lowest salary on the Green Bay Packers
+SELECT *
+FROM players as p
+JOIN teams t 
+ON p.team_id = t.id
+WHERE t.name = 'Green Bay Packers'
+ORDER BY salary ASC
+LIMIT 1;
